@@ -215,13 +215,19 @@ public:
 
 int main(){
 
-    Tshirt tshirt;
-    std::cin >> tshirt;
+        Tshirt tshirt;
+        std::cout << "Introduceti detalii despre tricou:" << std::endl;
+        std::cin >> tshirt;
 
-    Clothing* clothing = &tshirt;
-    clothing->processFunction();
-    Tshirt* downcastedTshirt = dynamic_cast<Tshirt*>(clothing);
-    downcastedTshirt->specificFunction();
+        std::cout << "Detalii despre tricou:" << std::endl;
+        tshirt.display();
+
+        std::cout << "ID tricou: " << tshirt.getId() << std::endl;
+
+        Clothing* clothing = &tshirt;
+        clothing->processFunction();
+        Tshirt* downcastedTshirt = dynamic_cast<Tshirt*>(clothing);
+        downcastedTshirt->specificFunction();
 
 
     return 0;
